@@ -11,6 +11,7 @@ public class GamesRoom {
 		}
 		if (gameToPlay.equals("y")) {
 			System.out.println("Okay");
+			GamesRoom.GetHumanPlayerChoiceGame ();
 		}
 		else if (gameToPlay.equals("n")) {
 			System.out.println("BORING!! Okay bye");
@@ -29,6 +30,9 @@ public class GamesRoom {
 		String computerPlayerName, computerPlayChoice;
 		int computerGamesWon, computerGamesLost;
 		
+	}
+	public static void GetHumanPlayerChoiceGame () {
+		System.out.println("Okay so what game would you like to play?\n1. Rock, Paper, Scissors\n2. Take the last carrot");
 	}
 	public static String GetHumanPlayerChoice123 () {
 		System.out.println("Make your selection.");
