@@ -33,9 +33,14 @@ public class GamesRoom {
 	}
 	public static void GetHumanPlayerChoiceGame () {
 		System.out.println("Okay so what game would you like to play?\n1. Rock, Paper, Scissors\n2. Take the last carrot");
+		String playerChoice = "error";
+		while (playerChoice.equals("error")) {
+			playerChoice = GamesRoom.GetHumanPlayerChoice123 ();
+		}
+		System.out.println("Sadly I need more code");
 	}
 	public static String GetHumanPlayerChoice123 () {
-		System.out.println("Make your selection.");
+		System.out.println("Enter 1, 2 or 3 only.");
 		Scanner keyboard = new Scanner(System.in);
 		String playerChoice;
 		playerChoice = keyboard.next();
@@ -50,12 +55,12 @@ public class GamesRoom {
 			}
 
 		else {
-			System.out.println ("Make a valid selection");
+			System.out.println ("Sorry, that input was wrong.");
 			return "error";
 		}	
 	}
 	public static String GetHumanPlayerChoiceYN () {
-		System.out.println("Make your selection.");
+		System.out.println("Enter Y for Yes or N for No.");
 		Scanner keyboard = new Scanner(System.in);
 		String playerChoice;
 		playerChoice = keyboard.next();
@@ -72,7 +77,7 @@ public class GamesRoom {
 			return playerChoice;
 			}
 		else {
-			System.out.println ("Make a valid selection");
+			System.out.println ("Sorry, that input was wrong.");
 			return "error";
 		}	
 	}
