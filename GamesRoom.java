@@ -41,6 +41,10 @@ public class GamesRoom {
 			System.out.println("Okay, lets play Rock, Paper, Scissors.");
 			GameRockPaperScissors.main(null);
 		}
+		else if (playerChoice.equals("2")) {
+			System.out.println("Okay, lets play Take the last carrot.");
+			GameCarrot.main(null);
+		}
 		else {
 		System.out.println("Sadly I need more code");
 		}
