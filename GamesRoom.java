@@ -65,6 +65,14 @@ public class GamesRoom {
 			return "error";
 		}	
 	}
+	public static String GetComputerPlayerChoice123 () {
+		String stringComputerChoice;
+		int intComputerChoice;
+		Random rnd = new Random();  
+		intComputerChoice = rnd.nextInt(3) + 1;
+		stringComputerChoice = Integer.toString(intComputerChoice);
+		return stringComputerChoice;
+	}	
 	public static String GetHumanPlayerChoiceYN () {
 		System.out.println("Enter Y for Yes or N for No.");
 		Scanner keyboard = new Scanner(System.in);
