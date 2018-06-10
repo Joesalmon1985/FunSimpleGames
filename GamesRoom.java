@@ -37,11 +37,13 @@ public class GamesRoom {
 		while (playerChoice.equals("error")) {
 			playerChoice = GamesRoom.GetHumanPlayerChoice123 ();
 		}
-		if (playerChoce.equals("1")) {
+		if (playerChoice.equals("1")) {
 			System.out.println("Okay, lets play Rock, Paper, Scissors.");
-			RockPaperScissorsGame.main();
+			GameRockPaperScissors.main(null);
 		}
+		else {
 		System.out.println("Sadly I need more code");
+		}
 	}
 	public static String GetHumanPlayerChoice123 () {
 		System.out.println("Enter 1, 2 or 3 only.");
