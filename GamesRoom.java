@@ -5,7 +5,7 @@ public class GamesRoom {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String gameToPlay = "error";
-		System.out.println("Welcome to the games room, we only have Rock Paper Scissors, would you like to play that today?");
+		System.out.println("Welcome to the games room, you can play Rock, Paper, Sicssors or take the last carrot. Would you like to play today?");
 		while (gameToPlay.equals("error")) {
 			gameToPlay = GetHumanPlayerChoiceYN();
 		}
@@ -37,7 +37,17 @@ public class GamesRoom {
 		while (playerChoice.equals("error")) {
 			playerChoice = GamesRoom.GetHumanPlayerChoice123 ();
 		}
+		if (playerChoice.equals("1")) {
+			System.out.println("Okay, lets play Rock, Paper, Scissors.");
+			GameRockPaperScissors.main(null);
+		}
+		else if (playerChoice.equals("2")) {
+			System.out.println("Okay, lets play Take the last carrot.");
+			GameCarrot.main(null);
+		}
+		else {
 		System.out.println("Sadly I need more code");
+		}
 	}
 	public static String GetHumanPlayerChoice123 () {
 		System.out.println("Enter 1, 2 or 3 only.");
@@ -59,6 +69,14 @@ public class GamesRoom {
 			return "error";
 		}	
 	}
+	public static String GetComputerPlayerChoice123 () {
+		String stringComputerChoice;
+		int intComputerChoice;
+		Random rnd = new Random();  
+		intComputerChoice = rnd.nextInt(3) + 1;
+		stringComputerChoice = Integer.toString(intComputerChoice);
+		return stringComputerChoice;
+	}	
 	public static String GetHumanPlayerChoiceYN () {
 		System.out.println("Enter Y for Yes or N for No.");
 		Scanner keyboard = new Scanner(System.in);
