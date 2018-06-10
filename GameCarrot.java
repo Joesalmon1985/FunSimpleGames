@@ -16,7 +16,7 @@ public class GameCarrot {
 		System.out.println("The winner is the one to take the final carrot.");
 		while (carrots > 0) {
 			talkCarrots = Integer.toString(carrots);
-			System.out.println("There are " + talkCarrots);
+			System.out.println("There are " + talkCarrots+ " carrots left.");
 			System.out.println("How many carrots would you like to take?");
 			humanChoice = GamesRoom.GetHumanPlayerChoice123();
 			humanCarrotTake = Integer.valueOf(humanChoice);

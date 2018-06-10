@@ -5,7 +5,7 @@ public class GamesRoom {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String gameToPlay = "error";
-		System.out.println("Welcome to the games room, we only have Rock Paper Scissors, would you like to play that today?");
+		System.out.println("Welcome to the games room, you can play Rock, Paper, Sicssors or take the last carrot. Would you like to play today?");
 		while (gameToPlay.equals("error")) {
 			gameToPlay = GetHumanPlayerChoiceYN();
 		}
