@@ -14,32 +14,32 @@ public class GameRockPaperScissors {
 	public static void PlayGame () {
 		String humanChoice = GameRockPaperScissors.GetHumanPlayerChoice(); 
 		String computerChoice = GameRockPaperScissors.GetComputerPlayerChoice();
-		System.out.print("You have chosen " + humanChoice + " the computer has chosen " + computerChoice + " ");
+		System.out.print("You have chosen " + humanChoice + " and the computer has chosen " + computerChoice + ", ");
 		if (humanChoice.equals(computerChoice)) {
-			System.out.println("So the game is a draw.");
+			System.out.println("draw.");
 		}
 		else if (humanChoice.equals("rock")) {
 			if (computerChoice.equals("scissors")) {
-				System.out.println("and you win the game!");
+				System.out.println("you win the game!");
 			}
 			else {
-				System.out.println("and you loose the game.");
+				System.out.println("you loose the game.");
 			}
 		}
 		else if (humanChoice.equals("paper")) {
 			if (computerChoice.equals("rock")) {
-				System.out.println("and you win the game!");
+				System.out.println("you win the game!");
 			}
 			else {
-				System.out.println("and you loose the game.");
+				System.out.println("you loose the game.");
 			}
 		}
 		else if (humanChoice.equals("scissors")) {
 			if (computerChoice.equals("paper")) {
-				System.out.println("and you win the game!");
+				System.out.println("you win the game!");
 			}
 			else {
-				System.out.println("and you loose the game.");
+				System.out.println("you loose the game.");
 			}
 		}
 		else { 
