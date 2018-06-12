@@ -7,11 +7,11 @@ public class GamesRoom {
 		String gameToPlay = "error";
 		System.out.println("Welcome to the games room, you can play Rock, Paper, Sicssors or take the last carrot. Would you like to play today?");
 		while (gameToPlay.equals("error")) {
-			gameToPlay = GetHumanPlayerChoiceYN();
+			gameToPlay = getHumanPlayerChoiceYN();
 		}
 		if (gameToPlay.equals("y")) {
 			System.out.println("Okay");
-			GamesRoom.GetHumanPlayerChoiceGame ();
+			GamesRoom.getHumanPlayerChoiceGame ();
 		}
 		else if (gameToPlay.equals("n")) {
 			System.out.println("BORING!! Okay bye");
@@ -31,11 +31,11 @@ public class GamesRoom {
 		int computerGamesWon, computerGamesLost;
 		
 	}
-	public static void GetHumanPlayerChoiceGame () {
+	public static void getHumanPlayerChoiceGame () {
 		System.out.println("Okay so what game would you like to play?\n1. Rock, Paper, Scissors\n2. Take the last carrot");
 		String playerChoice = "error";
 		while (playerChoice.equals("error")) {
-			playerChoice = GamesRoom.GetHumanPlayerChoice123 ();
+			playerChoice = GamesRoom.getHumanPlayerChoice123 ();
 		}
 		if (playerChoice.equals("1")) {
 			System.out.println("Okay, lets play Rock, Paper, Scissors.");
@@ -49,7 +49,7 @@ public class GamesRoom {
 		System.out.println("Sadly I need more code");
 		}
 	}
-	public static String GetHumanPlayerChoice123 () {
+	public static String getHumanPlayerChoice123 () {
 		System.out.println("Enter 1, 2 or 3 only.");
 		Scanner keyboard = new Scanner(System.in);
 		String playerChoice;
@@ -69,7 +69,7 @@ public class GamesRoom {
 			return "error";
 		}	
 	}
-	public static String GetComputerPlayerChoice123 () {
+	public static String getComputerPlayerChoice123 () {
 		String stringComputerChoice;
 		int intComputerChoice;
 		Random rnd = new Random();  
@@ -77,7 +77,7 @@ public class GamesRoom {
 		stringComputerChoice = Integer.toString(intComputerChoice);
 		return stringComputerChoice;
 	}	
-	public static String GetHumanPlayerChoiceYN () {
+	public static String getHumanPlayerChoiceYN () {
 		System.out.println("Enter Y for Yes or N for No.");
 		Scanner keyboard = new Scanner(System.in);
 		String playerChoice;

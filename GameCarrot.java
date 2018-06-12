@@ -4,13 +4,13 @@ public class GameCarrot {
 		String playAgain = "y";
 				while (!playAgain.equals("n")) {
 					if (playAgain.equals("y")) {
-						GameCarrot.PlayGame ();
+						GameCarrot.playGame ();
 			}
 						System.out.println("Want to play again?");
-						playAgain = GamesRoom.GetHumanPlayerChoiceYN();
+						playAgain = GamesRoom.getHumanPlayerChoiceYN();
 		}
 	}
-	public static void PlayGame () {
+	public static void playGame () {
 		int carrots = 10, humanCarrotTake, computerCarrotTake;
 		String humanChoice, computerChoice, talkCarrots;
 		System.out.println("The winner is the one to take the final carrot.");
@@ -18,12 +18,12 @@ public class GameCarrot {
 			talkCarrots = Integer.toString(carrots);
 			System.out.println("There are " + talkCarrots+ " carrots left.");
 			System.out.println("How many carrots would you like to take?");
-			humanChoice = GamesRoom.GetHumanPlayerChoice123();
+			humanChoice = GamesRoom.getHumanPlayerChoice123();
 			humanCarrotTake = Integer.valueOf(humanChoice);
 			while (humanCarrotTake > carrots) {
 				talkCarrots = Integer.toString(carrots);
 				System.out.println("No, you can't take that many, there are only " + talkCarrots + " left.");
-				humanChoice = GamesRoom.GetHumanPlayerChoice123();
+				humanChoice = GamesRoom.getHumanPlayerChoice123();
 				humanCarrotTake = Integer.valueOf(humanChoice);
 			}
 			carrots = carrots - humanCarrotTake;
@@ -31,11 +31,11 @@ public class GameCarrot {
 				System.out.println("You've WON!");
 			}
 			else {
-				computerChoice = GamesRoom.GetComputerPlayerChoice123();
+				computerChoice = GamesRoom.getComputerPlayerChoice123();
 				computerCarrotTake = Integer.valueOf(computerChoice);
 				while (computerCarrotTake > carrots) {
 					System.out.println("The computer is thinking.");
-					computerChoice = GamesRoom.GetComputerPlayerChoice123();
+					computerChoice = GamesRoom.getComputerPlayerChoice123();
 					computerCarrotTake = Integer.valueOf(computerChoice);
 				}
 				System.out.println("The computer wants to take " + computerCarrotTake);

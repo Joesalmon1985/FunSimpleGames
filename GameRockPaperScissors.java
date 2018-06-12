@@ -5,15 +5,15 @@ public class GameRockPaperScissors {
 		String playAgain = "y";
 				while (!playAgain.equals("n")) {
 					if (playAgain.equals("y")) {
-						GameRockPaperScissors.PlayGame ();
+						GameRockPaperScissors.playGame ();
 			}
 						System.out.println("Want to play again?");
-						playAgain = GamesRoom.GetHumanPlayerChoiceYN();
+						playAgain = GamesRoom.getHumanPlayerChoiceYN();
 		}
 	}
-	public static void PlayGame () {
-		String humanChoice = GameRockPaperScissors.GetHumanPlayerChoice(); 
-		String computerChoice = GameRockPaperScissors.GetComputerPlayerChoice();
+	public static void playGame () {
+		String humanChoice = GameRockPaperScissors.getHumanPlayerChoice(); 
+		String computerChoice = GameRockPaperScissors.getComputerPlayerChoice();
 		System.out.print("You have chosen " + humanChoice + " and the computer has chosen " + computerChoice + ", ");
 		if (humanChoice.equals(computerChoice)) {
 			System.out.println("draw.");
@@ -46,11 +46,11 @@ public class GameRockPaperScissors {
 			System.out.println("something went wrong");
 			}
 		}
-	public static String GetComputerPlayerChoice () {
+	public static String getComputerPlayerChoice () {
 		System.out.println("The computer is thinking.");
 		String computerChoice = "error";
 		while (computerChoice.equals("error")) {
-			computerChoice = GamesRoom.GetComputerPlayerChoice123 ();
+			computerChoice = GamesRoom.getComputerPlayerChoice123 ();
 		}
 		if (computerChoice.equals("1")) {
 			return "rock";
@@ -66,11 +66,11 @@ public class GameRockPaperScissors {
 		}
 	}
 	
-	public static String GetHumanPlayerChoice () {
+	public static String getHumanPlayerChoice () {
 		System.out.println("Choose 1 for Rock, 2 for Paper or 3 for Scissors");
 		String playerChoice = "error";
 		while (playerChoice.equals("error")) {
-			playerChoice = GamesRoom.GetHumanPlayerChoice123 ();
+			playerChoice = GamesRoom.getHumanPlayerChoice123 ();
 		}
 		if (playerChoice.equals("1")) {
 			return "rock";
