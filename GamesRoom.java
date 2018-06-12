@@ -42,7 +42,6 @@ public class GamesRoom {
 			}
 			else if (playerChoice.equals("3")) {
 				System.out.println("Sorry I need more code.");
-				GameCarrot.main(null);
 			}
 		}
 	}
