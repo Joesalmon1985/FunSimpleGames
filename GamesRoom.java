@@ -32,7 +32,7 @@ public class GamesRoom {
 	// Unsure how I could make this any shorter?
 	public static void getHumanPlayerChoiceGame () {
 		System.out.println("Okay so what game would you like to play?\n1. Rock, Paper, Scissors\n2. Take the last carrot");
-		String playerChoice;
+		String playerChoice = "error";
 		while (!playerChoice.matches("1|2|3")) {
 			playerChoice = GamesRoom.getHumanPlayerChoice123 ();
 			if (playerChoice.equals("1")) {
@@ -62,7 +62,7 @@ public class GamesRoom {
 		}	
 	}
 	
-	
+	// Again I'm stuck on how to make this shorter.
 	public static String getComputerPlayerChoice123 () {
 		String stringComputerChoice;
 		int intComputerChoice;
@@ -90,4 +90,141 @@ public class GamesRoom {
 			return "error";
 		}	
 	}
+	public static void carrotStart () {
+		String playAgain = "y";
+				while (!playAgain.equals("n")) {
+					if (playAgain.equals("y")) {
+						GamesRoom.playCarrotGame ();
+			}
+						System.out.println("Want to play again?");
+						playAgain = GamesRoom.getHumanPlayerChoiceYN();
+		}
+	}
+	public static void playCarrotGame () {
+		int carrots = 10, humanCarrotTake, computerCarrotTake;
+		String humanChoice, computerChoice, talkCarrots;
+		System.out.println("The winner is the one to take the final carrot.");
+		while (carrots > 0) {
+			talkCarrots = Integer.toString(carrots);
+			System.out.println("There are " + talkCarrots+ " carrots left.");
+			System.out.println("How many carrots would you like to take?");
+			humanChoice = GamesRoom.getHumanPlayerChoice123();
+			humanCarrotTake = Integer.valueOf(humanChoice);
+			while (humanCarrotTake > carrots) {
+				talkCarrots = Integer.toString(carrots);
+				System.out.println("No, you can't take that many, there are only " + talkCarrots + " left.");
+				humanChoice = GamesRoom.getHumanPlayerChoice123();
+				humanCarrotTake = Integer.valueOf(humanChoice);
+			}
+			carrots = carrots - humanCarrotTake;
+			if (carrots == 0) {
+				System.out.println("You've WON!");
+			}
+			else {
+				computerChoice = GamesRoom.getComputerPlayerChoice123();
+				computerCarrotTake = Integer.valueOf(computerChoice);
+				while (computerCarrotTake > carrots) {
+					System.out.println("The computer is thinking.");
+					computerChoice = GamesRoom.getComputerPlayerChoice123();
+					computerCarrotTake = Integer.valueOf(computerChoice);
+				}
+				System.out.println("The computer wants to take " + computerCarrotTake);
+				carrots = carrots - computerCarrotTake;
+				if (carrots == 0) {
+					System.out.println("You've lost.");
+				}
+			}
+		}
+	}
+
+	public static void rockPaperScissorsStart () {
+		String playAgain = "y";
+				while (!playAgain.equals("n")) {
+					if (playAgain.equals("y")) {
+						GamesRoom.playRockPaperScissorGame ();
+			}
+						System.out.println("Want to play again?");
+						playAgain = GamesRoom.getHumanPlayerChoiceYN();
+		}
+	}
+	public static void playRockPaperScissorGame () {
+		String humanChoice = GameRockPaperScissors.getHumanPlayerChoice(); 
+		String computerChoice = GameRockPaperScissors.getComputerPlayerChoice();
+		System.out.print("You have chosen " + humanChoice + " and the computer has chosen " + computerChoice + ", ");
+		if (humanChoice.equals(computerChoice)) {
+			System.out.println("draw.");
+		}
+		else if (humanChoice.equals("rock")) {
+			if (computerChoice.equals("scissors")) {
+				System.out.println("you win the game!");
+			}
+			else {
+				System.out.println("you loose the game.");
+			}
+		}
+		else if (humanChoice.equals("paper")) {
+			if (computerChoice.equals("rock")) {
+				System.out.println("you win the game!");
+			}
+			else {
+				System.out.println("you loose the game.");
+			}
+		}
+		else if (humanChoice.equals("scissors")) {
+			if (computerChoice.equals("paper")) {
+				System.out.println("you win the game!");
+			}
+			else {
+				System.out.println("you loose the game.");
+			}
+		}
+		else { 
+			System.out.println("something went wrong");
+			}
+		}
+	public static String getComputerPlayerChoice () {
+		System.out.println("The computer is thinking.");
+		String computerChoice = "error";
+		while (computerChoice.equals("error")) {
+			computerChoice = GamesRoom.getComputerPlayerChoice123 ();
+		}
+		if (computerChoice.equals("1")) {
+			return "rock";
+		}
+		else if (computerChoice.equals("2")) {
+			return "paper";
+		}
+		else if (computerChoice.equals("3")) {
+			return "scissors";
+		}
+		else {
+			return "error";
+		}
+	}
+	
+	public static String getHumanPlayerChoice () {
+		System.out.println("Choose 1 for Rock, 2 for Paper or 3 for Scissors");
+		String playerChoice = "error";
+		while (playerChoice.equals("error")) {
+			playerChoice = GamesRoom.getHumanPlayerChoice123 ();
+		}
+		if (playerChoice.equals("1")) {
+			return "rock";
+		}
+		else if (playerChoice.equals("2")) {
+			return "paper";
+		}
+		else if (playerChoice.equals("3")) {
+			return "scissors";
+		}
+		else {
+			return "error";	
+		}
+	}
+
 }
+
+	
+	
+
+
