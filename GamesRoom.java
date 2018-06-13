@@ -6,7 +6,7 @@ public class GamesRoom {
 		GamesRoom gamesRoom = new GamesRoom();
 		System.out.println("Welcome to the games room, you can play Rock, Paper, Sicssors or take the last carrot. Would you like to play today?");
 		    String gameToPlay = gamesRoom.getHumanPlayerChoiceYN();
-		    while (!gameToPlay.toLowerCase().equals("y") || gameToPlay.toLowerCase().equals("n")) {
+		    while (!gameToPlay.toLowerCase().matches("y|n")) {
 		        System.out.println("Invalid. Please enter y or n");
 		        gameToPlay = gamesRoom.getHumanPlayerChoiceYN();
 		    }
@@ -17,6 +17,7 @@ public class GamesRoom {
 		        System.out.println("BORING!! Okay bye");
 		    }    
 		}
+	
 	public class HumanPlayer {
 		String humanPlayerName, playChoice;
 		int humanGamesWon, humanGamesLost;
@@ -27,9 +28,11 @@ public class GamesRoom {
 		int computerGamesWon, computerGamesLost;
 		
 	}
+	
+	// Unsure how I could make this any shorter?
 	public static void getHumanPlayerChoiceGame () {
 		System.out.println("Okay so what game would you like to play?\n1. Rock, Paper, Scissors\n2. Take the last carrot");
-		String playerChoice = "error";
+		String playerChoice;
 		while (!playerChoice.matches("1|2|3")) {
 			playerChoice = GamesRoom.getHumanPlayerChoice123 ();
 			if (playerChoice.equals("1")) {
@@ -58,6 +61,8 @@ public class GamesRoom {
 			return "error";
 		}	
 	}
+	
+	
 	public static String getComputerPlayerChoice123 () {
 		String stringComputerChoice;
 		int intComputerChoice;
@@ -65,22 +70,19 @@ public class GamesRoom {
 		intComputerChoice = rnd.nextInt(3) + 1;
 		stringComputerChoice = Integer.toString(intComputerChoice);
 		return stringComputerChoice;
-	}	
+	}
+	
+	
+	// Similarly I can't see what the deadwood or sensible splits to be here are.
 	public static String getHumanPlayerChoiceYN () {
 		System.out.println("Enter Y for Yes or N for No.");
 		Scanner keyboard = new Scanner(System.in);
 		String playerChoice;
 		playerChoice = keyboard.next();
-		if (playerChoice.equals("y")) {
+		if (playerChoice.matches("y|Y")) {
 			return playerChoice;
 			}
-		else if (playerChoice.equals("Y")) {
-			return "y";
-			}
-		else if (playerChoice.equals("N")) {
-			return "n";
-			}
-		else if (playerChoice.equals("n")) {
+		else if (playerChoice.matches("n|N")) {
 			return playerChoice;
 			}
 		else {
