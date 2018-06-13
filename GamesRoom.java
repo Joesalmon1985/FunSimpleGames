@@ -148,6 +148,7 @@ public class GamesRoom {
 		}
 	}
 	public static void playRockPaperScissorGame () {
+		System.out.println("Choose 1 for rock 2 for paper and 3 for scissors.");
 		String humanChoice = GamesRoom.getHumanPlayerChoice123();
 		String humanPlay = GamesRoom.getRockPaperScissors(humanChoice);
 		String computerChoice = GamesRoom.getComputerPlayerChoice123();
