@@ -29,7 +29,7 @@ public class GamesRoom {
 		
 	}
 	
-	public static void getHumanPlayerChoiceGame () {
+	public void getHumanPlayerChoiceGame () {
 		System.out.println("Okay so what game would you like to play?\n1. Rock, Paper, Scissors\n2. Take the last carrot against an idiot");
 		String playerChoice = "error";
 		while (!playerChoice.matches("1|2|3")) {
