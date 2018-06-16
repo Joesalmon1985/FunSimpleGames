@@ -30,7 +30,7 @@ public class GamesRoom {
 	}
 	
 	public static void getHumanPlayerChoiceGame () {
-		System.out.println("Okay so what game would you like to play?\n1. Rock, Paper, Scissors\n2. Take the last carrot");
+		System.out.println("Okay so what game would you like to play?\n1. Rock, Paper, Scissors\n2. Take the last carrot against an idiot");
 		String playerChoice = "error";
 		while (!playerChoice.matches("1|2|3")) {
 			playerChoice = GamesRoom.getHumanPlayerChoice123 ();
@@ -48,7 +48,6 @@ public class GamesRoom {
 		}
 	}
 	
-	// This method is 10 lines long, I can't figure out how to split it into 5 lines.
 	public static String getHumanPlayerChoice123 () {
 		String playerChoice = new Scanner(System.in).next();
 		if (playerChoice.matches("1|2|3")) {
@@ -64,15 +63,6 @@ public class GamesRoom {
 	    int intComputerChoice = new Random().nextInt(3) + 1;
 	    String stringComputerChoice = Integer.toString(intComputerChoice);
 	    return stringComputerChoice;
-		
-//		Old stuff
-	    
-//		String stringComputerChoice;
-//		int intComputerChoice;
-//		Random rnd = new Random();
-//		intComputerChoice = rnd.nextInt(3) + 1;
-//		stringComputerChoice = Integer.toString(intComputerChoice);
-//		return stringComputerChoice;
 	}
 	
 	
@@ -104,6 +94,11 @@ public class GamesRoom {
 		int carrots = 10, humanCarrotTake, computerCarrotTake;
 		String humanChoice, computerChoice, talkCarrots;
 		System.out.println("The winner is the one to take the final carrot.");
+		GamesRoom.carrotGame ();
+	}
+	
+	// I can't seem to carry across variables from one class to another, I think I need to make some things objects, not sure how
+	public static void carrotGame () {
 		while (carrots > 0) {
 			talkCarrots = Integer.toString(carrots);
 			System.out.println("There are " + talkCarrots+ " carrots left.");
@@ -154,6 +149,12 @@ public class GamesRoom {
 		String computerChoice = GamesRoom.getComputerPlayerChoice123();
 		String computerPlay = GamesRoom.getRockPaperScissors(computerChoice);
 		System.out.print("You have chosen " + humanPlay + " and the computer has chosen " + computerPlay + ", ");
+		GamesRoom.getRockPaperScissorsWinner(humanPlay, computerPlay);
+	}
+	
+	
+	// This is very long, there must be a way to chop it down.
+	public static void getRockPaperScissorsWinner (String humanPlay, String computerPlay) {
 		if (humanPlay.equals(computerPlay)) {
 			System.out.println("draw.");
 		}
