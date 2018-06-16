@@ -29,7 +29,6 @@ public class GamesRoom {
 		
 	}
 	
-	// Unsure how I could make this any shorter?
 	public static void getHumanPlayerChoiceGame () {
 		System.out.println("Okay so what game would you like to play?\n1. Rock, Paper, Scissors\n2. Take the last carrot");
 		String playerChoice = "error";
@@ -51,8 +50,7 @@ public class GamesRoom {
 	
 	// This method is 10 lines long, I can't figure out how to split it into 5 lines.
 	public static String getHumanPlayerChoice123 () {
-		Scanner keyboard = new Scanner(System.in);
-		String playerChoice = keyboard.next();
+		String playerChoice = new Scanner(System.in).next();
 		if (playerChoice.matches("1|2|3")) {
 			return playerChoice;
 			}
@@ -62,23 +60,25 @@ public class GamesRoom {
 		}	
 	}
 	
-	// Again I'm stuck on how to make this shorter.
 	public static String getComputerPlayerChoice123 () {
-		String stringComputerChoice;
-		int intComputerChoice;
-		Random rnd = new Random();  
-		intComputerChoice = rnd.nextInt(3) + 1;
-		stringComputerChoice = Integer.toString(intComputerChoice);
-		return stringComputerChoice;
+	    int intComputerChoice = new Random().nextInt(3) + 1;
+	    String stringComputerChoice = Integer.toString(intComputerChoice);
+	    return stringComputerChoice;
+		
+//		Old stuff
+	    
+//		String stringComputerChoice;
+//		int intComputerChoice;
+//		Random rnd = new Random();
+//		intComputerChoice = rnd.nextInt(3) + 1;
+//		stringComputerChoice = Integer.toString(intComputerChoice);
+//		return stringComputerChoice;
 	}
 	
 	
-	// Similarly I can't see what the deadwood or sensible splits to be here are.
 	public static String getHumanPlayerChoiceYN () {
 		System.out.println("Enter Y for Yes or N for No.");
-		Scanner keyboard = new Scanner(System.in);
-		String playerChoice;
-		playerChoice = keyboard.next();
+		String playerChoice = new Scanner(System.in).next();
 		if (playerChoice.matches("y|Y")) {
 			return playerChoice;
 			}
