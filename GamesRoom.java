@@ -40,7 +40,7 @@ public class GamesRoom {
 			}
 			else if (playerChoice.equals("2")) {
 				System.out.println("Okay, lets play Take the last carrot.");
-				carrotGame = new GamesRoom.carrotGame ();
+				carrotGame currentGame = new GamesRoom.carrotGame ();
 			}
 			else if (playerChoice.equals("3")) {
 				System.out.println("Sorry I need more code.");
