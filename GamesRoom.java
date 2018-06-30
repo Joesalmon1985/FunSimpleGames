@@ -51,6 +51,8 @@ public class GamesRoom {
 
 	public class carrotGame {
 		int numberOfCarrots = 10;
+		String winner;
+		
 				
 	}
 	
